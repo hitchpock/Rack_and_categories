@@ -13,9 +13,9 @@ def rnd():
     for _ in range(random.randint(10, 12)):
         rack = Rack(random.randint(10, 20))
         rack_lst.append(rack)
-    lst = []
+    item_lst = []
     for _ in range(random.randint(20, 30)):
         item = Item(random.choice(categories), random.randint(1, 7), random.randint(1, 14))
-        lst.append(item)
+        item_lst.append(item)
         print(str(item))
-    return rack_lst, lst
+    return rack_lst, item_lst

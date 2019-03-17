@@ -1,0 +1,4 @@
+.vscode/*
+.ginignore
+.__pycache__/*
+.idea/*

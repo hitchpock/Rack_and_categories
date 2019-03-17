@@ -1,3 +1,7 @@
+"""
+Неправильное решение с полным перебором.
+"""
+
 from Item import Item
 from Rack import Rack
 import random
