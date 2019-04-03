@@ -57,6 +57,11 @@ def fill_cell(i, j, lst1, lst_item1):
             return res1
         else:
             return res2
+        if res1.crc == res2.crc:
+            if len(res1.lst) > len(res2.lst):
+                return res1
+            else:
+                return res2
     else:
         res3 = Cell()
         if lst1[i-1][j] is not None:
@@ -113,6 +118,8 @@ def create_dict(item_list):
             item_dict[item.category].append(item)
         else:
             item_dict[item.category] = [item]
+    # for k, v in item_dict.items():
+    #     print("{0}: {1}".format(k, ", ".join(str(item) for item in v)))
     return item_dict
 
 

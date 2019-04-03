@@ -18,16 +18,9 @@ def output(item_lst, rack_lst):
 
 
 def preparation(lst):
-    for i in lst:
-        i.term = 15 - i.term
-    lst = sorted(lst, key=lambda x: x.term/x.volume, reverse=True)
+    lst = sorted(lst, key=lambda x: x.term/x.volume, reverse=False)
     return lst
 
-
-def postprocessing(lst):
-    for i in lst:
-        i.term = 15 - i.term
-    return lst
 
 def check(item_lst, rack_lst):
     """
@@ -63,8 +56,6 @@ rack_list, item_list = rnd()
 item_list = preparation(item_list)
 for i in item_list:
     print("{0}: {1}".format(i, i.term/i.volume))
-print("123")
 
 sort(item_list, rack_list)
 output(item_list, rack_list)
-

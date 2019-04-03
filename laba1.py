@@ -68,7 +68,7 @@ def fill_cell(i, j, lst1, lst_item1):
             return None
 
 
-def fill(table1):
+def fill(table1, lst_item):
     """
     Заполнение ячеек таблицы.
     :param table1: Таблица заполненная None.
@@ -116,7 +116,7 @@ rack_lst, lst_item = rnd()
 rack = rack_lst[0]
 print(rack.volume)
 lst_item, table = preparation(lst_item, rack.volume)
-table = fill(table)
+table = fill(table, lst_item)
 result_cell, lst_item = postprocessing(table, lst_item, rack.volume)
 
 rack.put_lst(result_cell.lst)

@@ -7,7 +7,7 @@ def rnd():
     """
         Функция задающая случайные стеллаж и список товаров
         :return: Возвращает стеллаж и список товаров
-        """
+    """
     rack_lst = []
     categories = ["Овощи", "Фрукты", "Бакалея"]
     for _ in range(random.randint(10, 12)):
@@ -17,5 +17,5 @@ def rnd():
     for _ in range(random.randint(20, 30)):
         item = Item(random.choice(categories), random.randint(1, 7), random.randint(1, 14))
         item_lst.append(item)
-        print(str(item))
+        # print(str(item))
     return rack_lst, item_lst
