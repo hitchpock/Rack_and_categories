@@ -2,6 +2,7 @@
 Правильные жадные эвристики.
 """
 
+import time
 from random_func import rnd
 
 
@@ -51,11 +52,18 @@ def sort(item_lst, rack_lst):
                     item_lst.remove(item)
                     break
 
-
+start_time = time.time()
 rack_list, item_list = rnd()
+print(len(item_list))
 item_list = preparation(item_list)
 for i in item_list:
     print("{0}: {1}".format(i, i.term/i.volume))
 
 sort(item_list, rack_list)
 output(item_list, rack_list)
+chislo = 0
+for rack in rack_list:
+    chislo += len(rack.lst)
+print(chislo)
+end_time = time.time()
+print(end_time-start_time)

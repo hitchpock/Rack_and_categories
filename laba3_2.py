@@ -1,10 +1,14 @@
 """Вроде как правильный метод ветвей и границ"""
 import copy
+import time
 from TreeRack import Node, TreeRack, rnd
 from Item import Item
 
 
 def best_item(lst):
+    """
+    Нахождение самого старого товара из списка.
+    """
     if len(lst) > 0:
         res = lst[0]
         for item in lst:
@@ -16,6 +20,9 @@ def best_item(lst):
 
 
 def check(volume, lst):
+    """
+    Проверка, что мы еще можем что-то положить на стеллаж.
+    """
     for item in lst:
         if item.volume <= volume:
             return True
@@ -23,10 +30,16 @@ def check(volume, lst):
 
 
 def calc(node):
+    """
+    По сути метрика по которой мы отпределяем что именно этот предмет нам подходит.
+    """
     return (node.value.term + node.child.value.term)
 
 
 def search_child(node, volume, lst):
+    """
+    Нахождение следужего предмета, который положим на стеллаж.
+    """
     if check(volume, lst) is True:
         res_node = copy.copy(node)
         node.child = Node(Item(None, 100, 100))
@@ -44,7 +57,7 @@ def search_child(node, volume, lst):
     else:
         return None
         
-
+start_time = time.time()
 rack_list, item_list = rnd()
 print(len(item_list))
 for item in item_list:
@@ -64,3 +77,12 @@ for rack in rack_list:
     print(rack)
     print()
 
+chislo = 0
+for rack in rack_list:
+    val = rack.value
+    while val is not None:
+        chislo += 1
+        val = val.child
+print(chislo)
+end_time = time.time()
+print(end_time-start_time)

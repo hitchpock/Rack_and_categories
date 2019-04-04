@@ -4,6 +4,7 @@
 from Item import Item
 from Rack import Rack
 from Cell import Cell
+import time
 from random_func import rnd
 
 
@@ -123,7 +124,9 @@ def create_dict(item_list):
     return item_dict
 
 
+start_time = time.time()
 rack_lst, lst_item = rnd()
+print(len(lst_item))
 item_dict = create_dict(lst_item)
 result_rack_list = []
 for rack in rack_lst:
@@ -140,5 +143,10 @@ for k, v in item_dict.items():
     print("{0}: {1}".format(k, ", ".join(str(item) for item in v)))
 print()
 
+chislo = 0
 for rack in result_rack_list:
+    chislo += len(rack.lst)
     print(str(rack))
+print(chislo)
+end_time = time.time()
+print(end_time-start_time)
