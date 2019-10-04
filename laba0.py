@@ -35,18 +35,18 @@ def comb(lst_items, res, list_of_tuples):
         return None
 
 
-def rnd():
-    """
-    Функция задающая случайные стеллаж и список товаров
-    :return: Возвращает стеллаж и список товаров
-    """
-    rack = Rack(random.randint(7, 18))
-    print(rack.volume)
-    lst = []
-    for _ in range(random.randint(10, 20)):
-        item = Item('Овощи', random.randint(1, 5), random.randint(1, 14))
-        lst.append(item)
-    return rack, lst
+# def rnd():
+#     """
+#     Функция задающая случайные стеллаж и список товаров
+#     :return: Возвращает стеллаж и список товаров
+#     """
+#     rack = Rack(random.randint(7, 18))
+#     print(rack.volume)
+#     lst = []
+#     for _ in range(random.randint(10, 20)):
+#         item = Item('Овощи', random.randint(1, 5), random.randint(1, 14))
+#         lst.append(item)
+#     return rack, lst
 
 
 def create_list_of_tuples(lst):
