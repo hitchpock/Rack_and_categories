@@ -42,7 +42,9 @@ class Rack:
         return item
 
     def __str__(self):
-        # return "Rack: {0}, {1}, {2}".format(self.category, self.volume, self.lst)
-        return "Rack: cat({0}), st_vol({1}), vol({2}), len({3}), lst({4})".format(self.category, self.volume_start,
-                                                                                self.volume, len(self.lst),
-                                                                     ", ".join(str(item) for item in self.lst))
+        # return "Rack: {0}, {1}, {2}".format(self.category,
+        #                                       self.volume, self.lst)
+        return "Rack: cat({0}), st_vol({1}), vol({2}), len({3}),\
+             lst({4})".format(self.category, self.volume_start, self.volume,
+                              len(self.lst),
+                              ", ".join(str(item) for item in self.lst))

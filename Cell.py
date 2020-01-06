@@ -16,4 +16,5 @@ class Cell:
         self.crc = calc(self.lst)
 
     def __str__(self):
-        return "{0:<4}: [{1}]".format(self.crc, ", ".join(str(item) for item in self.lst))
+        return "{0:<4}:[{1}]".format(self.crc,
+                                     ", ".join(str(item) for item in self.lst))

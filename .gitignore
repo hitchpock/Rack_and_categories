@@ -1,6 +1,5 @@
-.vscode/*
+.vscode/
 .ginignore
-__pycache__/*
+__pycache__/
 .idea/*
-test0.py
-test1.py
+__pycache__/

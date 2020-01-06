@@ -1,8 +1,7 @@
 from Item import Item
 from Rack import Rack
 import random
-#10 - 12
-#20 - 30
+
 
 def rnd():
     """
@@ -16,7 +15,8 @@ def rnd():
         rack_lst.append(rack)
     item_lst = []
     for _ in range(random.randint(500, 1000)):
-        item = Item(random.choice(categories), random.randint(1, 7), random.randint(1, 14))
+        item = Item(random.choice(categories), random.randint(1, 7),
+                    random.randint(1, 14))
         item_lst.append(item)
         # print(str(item))
     return rack_lst, item_lst

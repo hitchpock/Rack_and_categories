@@ -38,7 +38,7 @@ def check(item_lst, rack_lst):
         if rack.category is None:
             rack_bool = False
     return item_bool, rack_bool
-    
+
 
 def sort(item_lst, rack_lst):
     item_bool, rack_bool = check(item_lst, rack_lst)
@@ -47,10 +47,12 @@ def sort(item_lst, rack_lst):
         output(item_lst, rack_lst)
         for item in item_lst:
             for rack in rack_lst:
-                if rack.volume > item.volume and (rack.category == item.category or rack.category is None):
+                if rack.volume > item.volume and \
+                   (rack.category == item.category or rack.category is None):
                     rack.put(item)
                     item_lst.remove(item)
                     break
+
 
 start_time = time.time()
 rack_list, item_list = rnd()

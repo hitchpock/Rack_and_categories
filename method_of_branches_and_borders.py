@@ -1,7 +1,7 @@
 """Вроде как правильный метод ветвей и границ"""
 import copy
 import time
-from TreeRack import Node, TreeRack, rnd
+from TreeRack import Node, rnd
 from Item import Item
 
 
@@ -31,7 +31,8 @@ def check(volume, lst):
 
 def calc(node):
     """
-    По сути метрика по которой мы отпределяем что именно этот предмет нам подходит.
+    По сути метрика по которой мы отпределяем,
+    что именно этот предмет нам подходит.
     """
     return (node.value.term + node.child.value.term)
 
@@ -45,7 +46,9 @@ def search_child(node, volume, lst):
         node.child = Node(Item(None, 100, 100))
         for item in lst:
             res_node.child = Node(item)
-            if calc(res_node) < calc(node) and (res_node.child.value.category == res_node.value.category) and (res_node.child.value.volume <= volume):
+            if calc(res_node) < calc(node) and \
+               (res_node.child.value.category == res_node.value.category) and \
+               (res_node.child.value.volume <= volume):
                 node.child = res_node.child
         if node.child.value.category is None:
             return None
@@ -56,7 +59,8 @@ def search_child(node, volume, lst):
         return node.child
     else:
         return None
-        
+
+
 start_time = time.time()
 rack_list, item_list = rnd()
 print(len(item_list))

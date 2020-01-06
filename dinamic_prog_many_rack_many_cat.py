@@ -1,8 +1,7 @@
 """
 Динамическое программирование задачи для нескольких стеллажей и категорий.
 """
-from Item import Item
-from Rack import Rack
+
 from Cell import Cell
 import time
 from random_func import rnd
@@ -44,7 +43,8 @@ def fill_cell(i, j, lst1, lst_item1):
             res1.lst += lst1[i - 1][j].lst
         else:
             res1.lst = []
-        if lst1[i-1][j-lst_item1[i].volume] is None or i-1 < 0 or j-lst_item1[i].volume < 0:
+        if lst1[i-1][j-lst_item1[i].volume] is None or i-1 < 0 or \
+           j-lst_item1[i].volume < 0:
             addition = 0
             lst_test.append(lst_item1[i])
         else:
